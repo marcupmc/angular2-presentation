@@ -1,0 +1,12 @@
+<div>
+    <h1>Todo List</h1>
+    <label for="new-todo">Add a new task : </label>
+    <input type="text" id='new-task' [(ngModel)]="newTask">
+    <button (click)='addATask(newTask)'>Add !</button>
+    <button (click)='getDefaultTasks()'>Get Default Tasks</button>
+    <div>
+        <div *ngFor='let task of tasks; let i = index'>
+                {{ task | customCapitalize}} <button (click)='removeTask(i)'>DELETE</button>
+        </div>
+    </div>
+</div>
